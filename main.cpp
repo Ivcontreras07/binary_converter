@@ -25,10 +25,20 @@ int main()
     and will be converted to a standard integer*/
   if(convert_type == "bi")
   {
+    string binary;
     cout << "Please enter a POSITIVE binary number\n";
-    cin >> k;
+    cin >> binary;
 
-  }
+    /*if(legal_string(binary))
+    {
+      cerr << "ERROR: not a valid binary number\n";
+      break;
+    }// prevents non binary from running convertion*/
+
+    int number = bton(binary);
+    cout << "the binary " << binary << " is " << number << endl;
+
+  }// end of  bi option
 
   // if num then a number will be converted to a binary
   if(convert_type == "num")
@@ -39,15 +49,17 @@ int main()
 
     // print the binary
     cout << "binary for " << k << " is ";
-    for(int i = temp_hold.size() -1; i >=0; i--)
+    for(int i = temp_hold.size() -1; i >= 0; i--)
     {
       cout << temp_hold[i];
     }
     cout << endl;
-  }
+  }// end of num option
+
   if(convert_type == "kill")
   {
-   //
+    cerr << "not present\n";
+   // not sure yet
   }
 
 
